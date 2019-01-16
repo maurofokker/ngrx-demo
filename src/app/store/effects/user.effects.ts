@@ -14,7 +14,10 @@ export class UserEffects {
 
   @Effect() getUser$ = this._actions$.pipe(
     ofType<GetUser>(UserActionsTypes.GetUser),
-    map(action => action.payload),
+    map(action => {
+      console.log(action);
+      return action.payload;
+    }),
     withLatestFrom(this._store.pipe(select(selectUserList))),
     switchMap(([id, users]) => {
       console.log('SWITCH MAP', id, users);

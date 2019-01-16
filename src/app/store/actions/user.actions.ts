@@ -10,21 +10,21 @@ export enum UserActionsTypes {
 }
 
 export class GetUsers implements Action {
-  public readonly type: UserActionsTypes.GetUsers;
+  public readonly type = UserActionsTypes.GetUsers;
 }
 
 export class GetUsersSuccess implements Action {
-  public readonly type: UserActionsTypes.GetUsersSuccess;
+  public readonly type = UserActionsTypes.GetUsersSuccess;
   constructor(public payload: User[]) { }
 }
 
 export class GetUser implements Action {
-  public readonly type: UserActionsTypes.GetUser;
+  public readonly type = UserActionsTypes.GetUser;
   constructor(public payload: number) { }
 }
 
 export class GetUserSuccess implements Action {
-  public readonly type: UserActionsTypes.GetUserSuccess;
+  public readonly type = UserActionsTypes.GetUserSuccess;
   constructor(public payload: User) { }
 }
 

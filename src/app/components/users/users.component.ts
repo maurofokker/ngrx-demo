@@ -24,6 +24,8 @@ export class UsersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // tslint:disable-next-line:no-debugger
+    // debugger;
     this._store.dispatch(new GetUsers());
     this._store.dispatch(new GetUser(this._route.snapshot.params.id));
   }
