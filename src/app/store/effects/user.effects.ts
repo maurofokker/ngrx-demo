@@ -17,8 +17,14 @@ export class UserEffects {
     map(action => action.payload),
     withLatestFrom(this._store.pipe(select(selectUserList))),
     switchMap(([id, users]) => {
-      const selectedUser = users.filter(user => user.id === +id)[0];
-      return of(new GetUserSuccess(selectedUser));
+      console.log('SWITCH MAP', id, users);
+      // const selectedUser = users.filter(user => user.id === +id)[0];
+      return of(new GetUserSuccess({
+        'id': 1,
+        'name': 'Peter Parker',
+        'cardNumber': 'XXXX-XXXX-XXXX-1234',
+        'cardType': 'Visa'
+      })); // selectedUser
     })
   );
 

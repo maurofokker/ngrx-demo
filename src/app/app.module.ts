@@ -14,10 +14,16 @@ import { ConfigService } from './services/config.service';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/effects/user.effects';
 import { ConfigEffects } from './store/effects/config.effects';
+import { UsersComponent } from './components/users/users.component';
+import { UserDetailsComponent } from './components/users/user-details/user-details.component';
+import { UserListComponent } from './components/users/user-list/user-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersComponent,
+    UserDetailsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

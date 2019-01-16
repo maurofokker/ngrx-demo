@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="column">
+    <app-user-list
+      [users]="users$ | async"
+      (userSelected)="navigateToUser($event)"
+      ></app-user-list>
+  </div>
+  <div class="column">
+    <app-user-details [user]="user$ | async"></app-user-details>
+  </div>
+</div>

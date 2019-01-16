@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { AppState } from './store/state/app.state';
+import { GetConfig } from './store/actions/config.actions';
+import { selectConfig } from './store/selectors/config.selectors';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'ngrx-demo';
+  config$ = this._store.pipe(select(selectConfig));
+
+  constructor(private _store: Store<AppState>) {}
+
+  ngOnInit() {
+    this._store.dispatch(new GetConfig());
+  }
+
 }
