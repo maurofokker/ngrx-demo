@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Peter Parker",
+      "cardNumber": "XXXX-XXXX-XXXX-1234",
+      "cardType": "Visa"
+    },
+    {
+      "id": 2,
+      "name": "Bucky Barnes",
+      "cardNumber": "XXXX-XXXX-XXXX-2233",
+      "cardType": "MasterCard"
+    },
+    {
+      "id": 3,
+      "name": "Tony Stark",
+      "cardNumber": "XXXX-XXXX-XXXX-1122",
+      "cardType": "Magna"
+    },
+    {
+      "id": 4,
+      "name": "Nick Fury",
+      "cardNumber": "XXXX-XXXX-XXXX-999",
+      "cardType": "MasterCard"
+    }
+  ]
+}
