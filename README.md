@@ -36,3 +36,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    5. `state`
 2. Create the initial `State` object for the features and the initial values (`store/state/[user|config].state.ts`)
 3. Create the app state that contains all features state and the router state (`store/state/app.state.ts`)
+4. Create the `Actions`
+   1. Create enum with action types in a single spot
+   2. Each class with action should implement `Action` interface from `@ngrx/store`
+   3. Finally export a type with declaration merging (actions classes)... can be this type or that type. This will provide type checking that can be used in the reducers
+
