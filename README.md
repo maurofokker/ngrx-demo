@@ -40,4 +40,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    1. Create enum with action types in a single spot
    2. Each class with action should implement `Action` interface from `@ngrx/store`
    3. Finally export a type with declaration merging (actions classes)... can be this type or that type. This will provide type checking that can be used in the reducers
+5. Create the `Reducers`
+   1. Reducers responds to some actions, because some others are handled by `effects`
+   2. Reducers receive the feature state and action, and return a new feature state
+   3. Using switch statement generate cases for each action type
+   4. Each case return a new state object with the result of merging the old state and the new value
+   5. All reducers have a default result that returns the state without any changes
+   6. Finally declare an `AppReducer` that add all the reducers to an action reducer map from `@ngrx/store` to add type checking
 
