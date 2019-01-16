@@ -11,6 +11,9 @@ import { appReducers } from './store/reducers/app.reducer';
 import { environment } from 'src/environments/environment';
 import { UsersService } from './services/users.service';
 import { ConfigService } from './services/config.service';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './store/effects/user.effects';
+import { ConfigEffects } from './store/effects/config.effects';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { ConfigService } from './services/config.service';
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([UserEffects, ConfigEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     AppRoutingModule

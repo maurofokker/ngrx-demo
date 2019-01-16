@@ -47,4 +47,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
    4. Each case return a new state object with the result of merging the old state and the new value
    5. All reducers have a default result that returns the state without any changes
    6. Finally declare an `AppReducer` that add all the reducers to an action reducer map from `@ngrx/store` to add type checking
+6. Create the `Selectors`
+   1. `createSelector` method of `@ngrx/store` can be used to return the slice of the store that the selector refers to
+      1. First param is the slice of the store that is going to use to get the data from (it can be an array with multiple parts of the state)
+      2. Second param is the anonymous function that is going to resolve what the selector is going to return
+      3. `createSelector` returns a Memoized selector, if nothing has changed returns the last known part if something has changed then returns the latest
+7. Create the `Effects` (in case you need to handle some actions that have _side effects_ as a middleware of the reducers)
+   1. Declare the effect class using the `@Injectable` decorator
+   2. In the `constructor` inject services that are going to be used, actions for `@ngrx/effects` in case you require, everything that you will need in the `Effect`
+   3. The effect is declared using the `@Effect()` decorator provided by `@ngrx/effects`
+      1. Using the `Actions` object provided by ``@ngrx/effects` to start piping the operators for the specific effect
+         1. Set the effect action type using the `ofType<T>` operator
+         2. Use `rxjs` operators to get what you need from the stream [rxjs docs](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html)
+         3. In the last operator, the `Effect` is gonna dispatch another action 
+      2. Another way is using `nrwl` `DataPersistence` API and `Entities`
 
