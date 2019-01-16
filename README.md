@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## NgRx WorkFlow
+
+1. Create folder associated to the `store` and sub-folders
+   1. `actions`
+   2. `effects`
+   3. `reducers`
+   4. `selectors`
+   5. `state`
+2. Create the initial `State` object for the features and the initial values (`store/state/[user|config].state.ts`)
+3. Create the app state that contains all features state and the router state (`store/state/app.state.ts`)
